@@ -1,0 +1,51 @@
+---
+title: "Classification"
+author: ""
+date: ""
+output: 
+  html_document:
+    toc: true
+    number_sections: false
+    toc_float: true
+    df_print: paged
+---
+
+```{r set-up, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      comment = "#>", highlight = TRUE,
+                      fig.align = "center")
+```
+
+## Packages and Data
+
+```{r packages-data}
+library(tidyverse)
+library(class)
+pokemon <- read_csv("data/pokemon_cleaned.csv", na = c("n/a", "", "NA"))
+```
+
+## Exercises
+
+1. Train the k-NN model using all existing Pokemon and create a logistic 
+   regression model for legendary status. For the following hypothetical 
+   Pokemon, classify them as being legendary vs. non-legendary using both k-NN 
+   and logistic regression. When using k-NN, try varying the chosen $k$ and 
+   compare/contrast the results. 
+
+    - HP: 91,  ATK: 134, DEF: 95,  SPA: 100, SPD: 100, SPE: 80
+    - HP: 30,  ATK: 60,  DEF: 180, SPA: 50,  SPD: 180, SPE: 50
+    - HP: 105, ATK: 95,  DEF: 60,  SPA: 95,  SPD: 60,  SPE: 90
+    - HP: 45,  ATK: 55,  DEF: 60,  SPA: 60,  SPD: 50,  SPE: 35
+    - HP: 100, ATK: 130, DEF: 110, SPA: 90,  SPD: 80,  SPE: 100
+
+<br/>
+
+2. When using logistic regression, which has the highest estimated probability 
+   of being a legendary Pokemon?
+
+## Stage, commit and push
+
+1. Stage your modified files.
+2. Commit your changes with an informative message.
+3. Push your changes to your GitHub repo.
+4. Verify your files were updated on GitHub.
